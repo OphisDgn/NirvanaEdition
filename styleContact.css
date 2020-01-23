@@ -1,0 +1,622 @@
+body {
+  font-family: 'Tw Cen MT';
+	margin : 0;
+	display: block;
+	width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+#logo{
+  width: 65px;
+  height: 60px;
+  margin-top: 23px;
+}
+/* la navbar */
+.navbar {
+  background: rgba(15, 15, 15, 0.849);
+  color: #fff;
+  margin: auto;
+	padding: 0;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul.links {
+  margin: auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: 0.4s ease all, 0s ease background;
+}
+.navbar ul.links li {
+  text-transform: uppercase;
+  padding: 0 15px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease all, 0s ease margin;
+}
+.navbar ul.links li a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar ul.links li.menu a:hover {
+  color: #e84868;
+}
+
+/* bouton de contact */
+.right {
+  display: none;
+}
+/* pour la forme des boutons */
+button {
+  background: pink;
+  outline: none;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 1px solid pink;
+  letter-spacing: 1px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: white;
+  background: #222222;
+  border-color: black;
+}
+
+/* pour avoir la navbar tout le temps quand on scroll */
+.navbar.sticky {
+  position: fixed;
+  z-index: 40;
+}
+.navbar.sticky ~ main {
+  position: relative;
+  z-index: 20;
+  top: 65px;
+}
+
+/* partie pour que la navbar soit responsive et belle sur mobile */
+  @media screen and (max-width: 700px) {
+
+		#kinect{
+			display: none;
+		}
+    .navbar .right {
+      overflow: hidden;
+    }
+  
+    .toggle {
+      position: absolute;
+      top: 32.5px;
+      left: 20px;
+      z-index: 99;
+      transform: translateY(-50%);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .toggle > * {
+      width: 80%;
+      height: 2px;
+      background: #fff;
+      margin: 3px 0;
+    }
+  
+    .navbar.collapsed .toggle .line1 {
+      transform: rotate(-45deg) translate(-4px, 5px);
+    }
+    .navbar.collapsed .toggle .line2 {
+      opacity: 0;
+    }
+    .navbar.collapsed .toggle .line3 {
+      transform: rotate(45deg) translate(-6px, -7px);
+    }
+  
+    .navbar .links {
+      position: fixed;
+      background-color: rgba(15, 15, 15, 0.849);
+      z-index: 40;
+      top: 0;
+      left: -100%;
+      flex-direction: column;
+      width: 45vw;
+      height: 100%;
+    }
+
+    .navbar .links li:first-child {
+      margin-top: 80px;
+    }
+  
+    .navbar.collapsed .links {
+      left: 0;
+    }
+    .navbar.collapsed .links a {
+      color: #fff;
+    }
+    .navbar.collapsed .links li {
+      width: 100%;
+    }
+    .navbar.collapsed .links li:hover a {
+      color: #fff;
+    }
+  
+    .navbar.collapsed .right {
+      position: fixed;
+      width: 45vw;
+      text-align: center;
+      height: auto;
+      bottom: 40px;
+      left: 22.5vw;
+      transform: translateX(-50%);
+      z-index: 45;
+      display: block;
+    }
+  
+    .navbar.collapsed ~ main {
+      filter: blur(1px);
+      opacity: 0.8;
+    }
+  
+    .navbar.sticky {
+      position: fixed;
+      z-index: 40;
+    }
+  }
+
+h1 {
+		text-align: center;
+}
+
+
+/* pour le formulaire */
+
+.container-contact {
+	width: 100%;
+	height: 100%;
+}
+
+#contact {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+	background-image: url("images/sable.png");
+  padding: 25px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form-contact {
+  margin: 0 auto;
+  max-width: 300px;
+  padding-top: 12px;
+	max-height: 250px;
+  z-index: 0;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px 'Tw Cen MT', sans-serif;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #f4a35d;
+  color: #FFF;
+  margin: 20 0 0px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #f4a35d;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px #E29049;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+/* les dunes */
+#imageFond {
+  width: 100%;
+	height: 250px;
+	z-index: 2;
+ }
+
+/* Responsive contenu */
+ @media screen and (max-width: 700px) {
+	 /* pour le formulaire */
+
+	.container-contact {
+		width: 100%;
+		height: 100%;
+	}
+
+	#contact {
+		width: 100%;
+	}
+
+	.form-contact {
+		margin-left: 40px;
+		max-width: 250px;
+	}
+
+	/* les dunes */
+	#imageFond {
+		margin-top: 140px;
+		width: 100%;
+		height: 100px;
+		z-index: 2;
+	}
+ }
+
+
+/* el footer */
+.footer-wrap {
+	background: rgba(15, 15, 15, 0.849);
+	border-top: 1px solid #e0e4f6;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.footer-top .container {
+	border-bottom: 1px solid #e0e4f6;
+	padding-bottom: 20px;
+}
+
+.mem {
+  margin-left: 125px;
+}
+
+.f-menu-list .f-menu {
+	float: left;
+	width: 18.75%;
+	padding-left: 35px;
+	margin: 0 0 25px;
+}
+.f-menu-list .f-menu h3 {
+	color: white;
+	font-size: 17px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+.f-menu ul {
+  text-decoration: none;
+	list-style-type: none;
+}
+
+.f-menu-list .f-menu ul li a {
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+	padding: 5px 0;
+  text-decoration: none;
+
+}
+.f-menu-list .f-menu ul li a i {
+	margin-right: 18px;
+}
+.f-menu-list .f-menu ul li a:hover{
+	background:none;
+	color: #e84868;
+}
+.f-menu-list .f-menu ul li a {
+	color: white;
+	background-color: transparent;
+	border-radius: 0;
+  text-decoration: none;
+}
+.f-menu-list .f-menu ul li a:hover {
+	color: #e84868;
+	background-color: transparent;
+}
+
+.f-subscribe {
+	float: left;
+	width: 25%;
+	padding: 0 15px;
+	margin: 0 0 10px;
+}
+.f-subscribe h3 {
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+.f-subscribe-form {
+	position: relative;
+}
+.f-subscribe-form input[type=text] {
+	border: 1px solid #e0e4f6;
+	color: #373d54;
+	font-family: 'Tw Cen MT', sans-serif;
+	font-size: 14px;
+	margin-top: 0;
+	outline: none;
+	padding: 7px 50px 7px 12px;
+	width: 100%;
+	max-width: 100%;
+	transition: all 0.2s;
+}
+.f-subscribe-form input[type=text]:focus {
+	border-color: #d1d5e5;
+}
+.f-subscribe-form input[type=text]::-webkit-input-placeholder {
+	color: #c7cbdc;
+}
+.f-subscribe-form input[type=text]::-moz-placeholder {
+	color: #c7cbdc;
+	opacity: 1;
+}
+.f-subscribe-form input[type=text]:-ms-input-placeholder {
+	color: #c7cbdc;
+}
+.f-subscribe-form button {
+	background: #f4a35d;
+	border: none;
+	border-radius: 0;
+	line-height: 1;
+	padding: 7px 17px 8px;
+	transition: all 0.2s;
+	color: #fff;
+	height: 32px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.f-subscribe-form button i {
+	font-size: 14px;
+}
+.f-subscribe-form button:hover,
+.f-subscribe-form button:focus {
+	background:#f4a35d;
+	color: #fff;
+}
+.f-subscribe p {
+	margin-top: 13px;
+	color: #acadae;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.fot-bottom p {
+	color: #373d54;
+	font-size: 14px;
+}
+
+.fot-bottom p span a {
+	color: #28a906;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.foter-copyright {
+	margin: 10px 0 0 15px;
+	color: white;
+  font-size: 12px;
+}
+.copyri {
+  color: white;
+  text-decoration: none;
+}
+
+.copyri:hover {
+  color: #e84868;
+}
+
+.social-icons {
+	text-align: left;
+	margin: 0;
+  margin-right: 100px;
+}
+
+.tableFoot {
+	text-align: left;
+  margin-right: 100px;
+}
+
+.tableFoot td {
+  width: 100%;
+}
+
+.social-icons li a {
+	border: 0 none;
+	border-radius: 0;
+	color: #5f6680;
+	padding:0px;
+}
+.social-icons li{
+	display:inline-block;
+}
+.social-icons li a i {
+	padding: 11px 15px;
+	margin-bottom: -1px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social-icons li a i:hover {
+	color: #fff;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social-icons .fa-facebook:hover {
+	background: #0083C9;
+}
+.social-icons .fa-twitter:hover  {
+	background:#5BBCEC;
+}
+.social-icons .fa-instagram:hover  {
+	background:#b4307d;
+}
+.social-icons .fa-linkedin-in:hover  {
+	background:#4c75a3;
+}
+/* pour les formats grand de telephone */
+@media screen and (max-width : 700px) {
+  /* Footer */
+  .footer-wrap {
+    height: auto;
+    width: 100%;
+    padding-bottom: 3px;
+    overflow: hidden;
+		position: relative;
+  }
+
+  .f-menu-list .f-menu {
+      width: 25%;
+      margin-right: 16%;
+  }
+
+
+  .mem {
+    margin-left: 0px;
+  }
+  
+  .tableFoot {
+    width: 100%;
+  }
+
+  .f-subscribe {
+      float: none;
+      clear: both;
+      max-width: 400px;
+      width: 93%;
+  }
+
+  .f-block-modal-wrap .f-block-modal.f-block-modal-map {
+      width: 40%;
+  }
+
+  .f-block-modal.f-block-modal-map .allstore-gmap {
+      width: 20%;
+  }
+}
+
+/* pour les écrans de type Iphone 6s et plus grand */
+@media screen and (max-width : 500px) {
+  /* Footer */
+  .footer-wrap {
+    height: auto;
+    width: 100%;
+    padding-bottom: 3px;
+    overflow: hidden;
+		position: relative;
+  }
+
+  .f-menu-list .f-menu {
+      width: 25%;
+      margin-right: 9%;
+  }
+  
+  .mem {
+    margin-left: 0px;
+  }
+
+  .tableFoot {
+    width: 100%;
+  }
+
+  .f-subscribe {
+      float: none;
+      clear: both;
+      max-width: 400px;
+      width: 93%;
+  }
+
+  .f-block-modal-wrap .f-block-modal.f-block-modal-map {
+      width: 40%;
+  }
+
+  .f-block-modal.f-block-modal-map .allstore-gmap {
+      width: 20%;
+  }
+}
