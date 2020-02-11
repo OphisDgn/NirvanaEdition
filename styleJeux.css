@@ -86,7 +86,6 @@ button:hover {
 
 /* partie pour que la navbar soit responsive et belle sur mobile */
   @media screen and (max-width: 700px) {
-
 			#kinect{
 			display: none;
 		}
@@ -182,23 +181,140 @@ h1 {
 		text-align: center;
 }
 
-/* Mise en page de jeu */
-
-#about {
-	margin: 70px;
+/* pour la premiere slide */
+#slide1 {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: white center 0 no-repeat fixed; 
 }
 
+#logoNirvana {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  margin-top: 10%;
+}
 
+#dunesSable {
+  height: 38%;
+  width: 100%;
+	position: absolute;
+	bottom: 0;
+  z-index: 3;  
+}
+
+/* pour la 2e slide */
+#slide2 {
+  margin: 0;
+  width: 100%;
+  height: 80%;
+  background-image: url("images/arbre.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.slide_inside {
+  display: table;
+  width: 100%;
+}
+
+.placeLogo{
+  float: right;
+  height: 500px;
+  margin-right: 300px;
+  margin-top: 250px;
+  display:table-cell;
+}
+
+.zone {
+  background: rgba(104, 103, 103, 0.781);
+  display: table-cell;
+  margin-top: 200px;
+  margin-left: 100px;
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.slide_in{
+  text-align: center;
+  margin-top: 200px;
+}
+
+.link-one {
+  color: white;
+  font-weight: 700;
+  padding-bottom: .25rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link-one::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #f4a35d;
+  height: 4px;
+  width: 100%;
+  
+  transform: scaleX(0);
+  transition: transform 150ms ease-in;
+}
+
+.link-one:hover::after {
+  transform: scale(1);
+}
+
+#slide3 {
+  margin: 0;
+  width: 100%;
+  height: 60%;
+  background: white;
+}
+
+.link-two {
+  color: black;
+  font-weight: 700;
+  padding-bottom: .25rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link-two::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #f4a35d;
+  height: 4px;
+  width: 100%;
+  
+  transform: scaleX(0);
+  transition: transform 150ms ease-in;
+}
+
+.link-two:hover::after {
+  transform: scale(1);
+}
 
 /* el footer */
+#slide4 {
+  margin: 0;
+  width: 100%;
+  bottom: 0;
+}
+
 .footer-wrap {
 	background: rgba(15, 15, 15, 0.849);
-	border-top: 1px solid #e0e4f6;
   width: 100%;
   height: auto;
   position: absolute;
-  margin-bottom: 0;
-  bottom: 0;
 }
 
 .footer-top .container {
@@ -303,7 +419,7 @@ h1 {
 	padding: 7px 17px 8px;
 	transition: all 0.2s;
 	color: #fff;
-	height: 31px;
+	height: 32px;
 	display: block;
 	position: absolute;
 	top: 0;
